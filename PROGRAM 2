@@ -1,0 +1,20 @@
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess PROTO,
+dwExitCode:DWORD
+.data
+val1 DWORD 10;
+.code
+main PROC
+mov ebx,5;
+mov ecx,4;
+mov edx,8;
+.IF( ebx > ecx && ebx > edx) || ( edx > eax)
+mov eax,1;
+.ELSE
+mov eax,2;
+.ENDIF
+INVOKE ExitProcess,0
+main ENDP
+END main
